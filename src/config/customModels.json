@@ -1,0 +1,10 @@
+{
+  "customModels": [
+    {
+      "id": "google/gemini-2.0-flash-thinking-exp:free",
+      "name": "gemini 2.0",
+      "provider": "google",
+      "isCustom": true
+    }
+  ]
+}

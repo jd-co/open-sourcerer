@@ -1,0 +1,148 @@
+{
+  "name": "open-sourcerer",
+  "displayName": "Open Sourcerer",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:openSourcerer.inlineChat",
+    "onCommand:openSourcerer.fixWithAI",
+    "onCommand:openSourcerer.toggleSuggestion",
+    "onLanguage:javascript"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "openSourcerer.inlineChat",
+        "title": "Open Inline Chat"
+      },
+      {
+        "command": "openSourcerer.fixWithAI",
+        "title": "Fix with AI"
+      },
+      {
+        "command": "openSourcerer.chatWindow",
+        "title": "Open AI Chat Window"
+      },
+      {
+        "command": "openSourcerer.acceptSuggestion",
+        "title": "Accept AI Suggestion"
+      },
+      {
+        "command": "openSourcerer.rejectSuggestion",
+        "title": "Reject AI Suggestion"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "openSourcerer.inlineChat",
+        "key": "ctrl+shift+i",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "openSourcerer.chatWindow",
+        "key": "ctrl+shift+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "openSourcerer.acceptSuggestion",
+        "key": "ctrl+shift+k",
+        "when": "editorTextFocus && activeSuggestion"
+      },
+      {
+        "command": "openSourcerer.rejectSuggestion",
+        "key": "ctrl+shift+r",
+        "when": "editorTextFocus && activeSuggestion"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "openSourcerer",
+          "title": "Open Sourcerer",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "views": {
+      "openSourcerer": [
+        {
+          "id": "openSourcerer.chatView",
+          "name": "AI Chat",
+          "type": "webview"
+        }
+      ]
+    },
+    "codeActions": [
+      {
+        "language": "javascript",
+        "title": "Fix with AI",
+        "command": "openSourcerer.fixWithAI"
+      }
+    ],
+    "configuration": {
+      "title": "Open Sourcerer",
+      "properties": {
+        "openSourcerer.apiKey": {
+          "type": "string",
+          "description": "Your OpenRouter API Key",
+          "default": ""
+        },
+        "openSourcerer.apiUrl": {
+          "type": "string",
+          "description": "You OpenRouter API Url",
+          "default": "https://openrouter.ai/api/v1/chat/completions"
+        },
+        "openSourcerer.model": {
+          "type": "string",
+          "description": "Add a model",
+          "default": "google/gemini-2.0-flash-exp:free"
+        },
+        "openSourcerer.chatModel": {
+          "type": "string",
+          "default": "openai/gpt-4",
+          "description": "The AI model to use for chat interactions"
+        }
+      }
+    },
+    "menus": {
+      "editor/context": [
+        {
+          "command": "openSourcerer.inlineChat",
+          "when": "editorTextFocus",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.98.0",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.21.0",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "axios": "^1.8.3",
+    "dotenv": "^16.4.7",
+    "marked": "^15.0.7"
+  }
+}
