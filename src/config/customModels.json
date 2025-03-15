@@ -1,9 +1,15 @@
 {
   "customModels": [
     {
-      "id": "google/gemini-2.0-flash-thinking-exp:free",
-      "name": "gemini 2.0",
+      "id": "google/gemma-3-27b-it:free",
+      "name": "Gemma",
       "provider": "google",
+      "isCustom": true
+    },
+    {
+      "id": "deepseek/deepseek-r1-zero:free",
+      "name": "Deepseek R1",
+      "provider": "deepseek",
       "isCustom": true
     }
   ]

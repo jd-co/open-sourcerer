@@ -203,7 +203,6 @@ export class ChatViewProvider {
     } else if (message.type === "changeModel") {
       // Update the model using the config utility
       await saveModel(message.model);
-      
       // Send confirmation back to webview
       this.panel.webview.postMessage({
         type: 'modelChanged',

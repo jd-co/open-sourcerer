@@ -99,14 +99,9 @@
           "description": "You OpenRouter API Url",
           "default": "https://openrouter.ai/api/v1/chat/completions"
         },
-        "openSourcerer.model": {
-          "type": "string",
-          "description": "Add a model",
-          "default": "google/gemini-2.0-flash-exp:free"
-        },
         "openSourcerer.chatModel": {
           "type": "string",
-          "default": "openai/gpt-4",
+          "default": "google/gemma-3-27b-it:free",
           "description": "The AI model to use for chat interactions"
         }
       }

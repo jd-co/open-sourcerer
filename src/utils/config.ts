@@ -20,7 +20,7 @@ export async function getApiKey(): Promise<string | undefined> {
 }
 
 export function getSelectedModel(): string {
-  return vscode.workspace.getConfiguration("openSourcerer").get<string>("chatModel") ?? "openai/gpt-4";
+  return vscode.workspace.getConfiguration("openSourcerer").get<string>("chatModel") ?? "google/gemma-3-27b-it:free";
 }
 
 export async function saveApiKey(apiKey: string) {
