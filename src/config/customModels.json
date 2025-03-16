@@ -1,15 +1,15 @@
 {
   "customModels": [
     {
-      "id": "google/gemma-3-27b-it:free",
-      "name": "Gemma",
-      "provider": "google",
-      "isCustom": true
-    },
-    {
       "id": "deepseek/deepseek-r1-zero:free",
       "name": "Deepseek R1",
       "provider": "deepseek",
+      "isCustom": true
+    },
+    {
+      "id": "google/gemma-3-12b-it:free",
+      "name": "Gemma",
+      "provider": "Custom",
       "isCustom": true
     }
   ]

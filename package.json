@@ -13,10 +13,12 @@
     "onCommand:openSourcerer.inlineChat",
     "onCommand:openSourcerer.fixWithAI",
     "onCommand:openSourcerer.toggleSuggestion",
+    "onView:openSourcerer.sidebarView",
     "onLanguage:javascript"
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "inlineCompletions": {},
     "commands": [
       {
         "command": "openSourcerer.inlineChat",
@@ -73,9 +75,10 @@
     "views": {
       "openSourcerer": [
         {
-          "id": "openSourcerer.chatView",
-          "name": "AI Chat",
-          "type": "webview"
+          "id": "openSourcerer.sidebarView",
+          "name": "SuperMaven",
+          "type": "webview",
+          "visibility": "visible"
         }
       ]
     },
